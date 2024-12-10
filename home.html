@@ -11,59 +11,73 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 
-  </head>
+</head>
+
 <style>
   #introduceAnimal {
     font-weight: 900 ;
-    color: beige;
+    color: rgb(252, 251, 251);
     font-size: x-large;
     }
+
+  #taipeiZoo{
+    image-rendering: inherit;
+image-rendering: initial;
+image-rendering: unset;
+
+  }
 </style>
 
 <body>
-  
+  <!--圖片來源 台北動物園電子報、123RF-->
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand animate__fadeInDownBig" id = "introduceAnimal"  href="#">台灣保育動物介紹</a>
+      <a class="navbar-brand animate__fadeInDownBig" id = "introduceAnimal"  href="#"><h2>台灣保育動物介紹<h2></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">選單分類</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="home.html"><h3>首頁<h3><hr></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">瀕臨絕種</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+              <a class="nav-link" href="#">珍貴稀有</a>
+            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+              哺乳類
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="landmammals.html">陸域</a></li>
+                <li><a class="dropdown-item" href="#">海域</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
-          </ul>
+          
+          <!--</ul>
           <form class="d-flex mt-3" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-success" type="submit">Search</button>
-          </form>
+          </form>-->
         </div>
       </div>
     </div>
   </nav>
 
+<!--
 <hr>
 <hr>
 <hr>
@@ -79,14 +93,18 @@
     <li><a class="dropdown-item" href="#">細菌界</a></li>
   </ul>
 </div>
-
-<!--存入圖片-->
-<div>
-  <img  src = "img/introduce.png"/>
-</div>
-
 <div class="animate__fadeInDownBig">hello
 </div>
+-->
+<!--存入圖片-->
+<hr>
+<div>
+  <img  src = "TaipeiZoo.jpeg" id= "taipeiZoo" >
+</div>
+
+
+
+
 
 
 </body>
