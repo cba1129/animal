@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+
+<style>
+    #introduceAnimal {
+      font-weight: 900 ;
+      color: beige;
+      font-size: x-large;
+      }
+    #extinct1{
+      /*width: 300px;*/
+      height: 100px;
+     /* left: ;*/
+      margin: 100px;
+      /*padding: 5px;
+     /* border: 5px rgb(12, 12, 12) solid;
+      width: 150px;
+      height: 100px;*/
+      
+    }
+    
+    .title_text{
+      margin: 30px;
+    }
+    .title_text1{
+      margin: 700px;
+      /*padding: 10px;*/
+      color: brown;
+    }
+    .btn-custom {
+  background-color: #4CAF50;  /* 设置背景色 */
+  color: white;  /* 设置文字颜色 */
+   }
+   #buttontext{
+  /*padding: 10px;*/
+  margin: 30px;
+}
+    
+</style>
+
+<body>
+            
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand animate__fadeInDownBig" id = "introduceAnimal"  href="home.html">台灣保育類野生動物</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">選單分類</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="home.html"><h3>首頁<h3><hr></a>
+                </li>
+    
+                <li class="nav-item">
+                  <a class="nav-link" href="#" >哺乳類</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">鳥類</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">爬蟲類</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">兩棲類</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">魚類</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">無脊椎類</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">其他物種</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    第一級保育類
+                  </a>
+                  
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="landmammals.html">哺乳類</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+            </div>
+          </div>
+        </div>
+      </nav>
+<br>
+<br>
+<br>
+<div id="buttontext">
+  <a  type="button" class="btn btn-outline-success" href ="landmammals.html" >哺乳類</a>
+  <a type="button" class="btn btn-custom" herf ="#">鳥類</a>
+  <button type="button" class="btn btn-outline-success">魚類</button>
+  <button type="button" class="btn btn-outline-success">Danger</button>
+  <button type="button" class="btn btn-outline-success">Warning</button>
+  <button type="button" class="btn btn-outline-success">Info</button>
+  <button type="button" class="btn btn-outline-success">Light</button>
+  <button type="button" class="btn btn-outline-success">Dark</button>
+</div>
+<hr>
+
+<div class="title_text"></div>
+    <!--以下是卡片-->
+  <div class="row row-cols-1 row-cols-md-3 g-4" id ="extinct1">
+      <div class="col"><!--長-->
+      <div class="card h-100"  >
+        <img src="animalImg/e.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b><center>赫氏角鷹</center></b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            又名雄鷹。是一種中型猛禽，分布於亞洲的山區和草原地帶。牠們體型中等，翼展可達1.4米，羽毛呈暗褐色，胸部有斑紋。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            他們有極為銳利的視力，主要捕食小型哺乳動物、鳥類和爬行類。牠們擅長長時間在高空滑行，利用上升氣流捕捉獵物，具有強大的飛行能力，是高山地區的頂級捕食者之一。</p>
+        </div>
+      </div>
+    </div>
+    <!--短-->
+    <div class="col">
+      <div class="card h-100" >
+        <img src="animalImg/leopardCat.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b><center>石虎</center></b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
+            牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="animalImg/lutra.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b><center>水獺</center></b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            水獺是一種生活在水域附近的哺乳動物，屬於水獺科。牠們體型中等，身長約50至90公分，擁有長而有力的尾巴，適合游泳。水獺的毛色通常為棕色或灰色，毛皮厚實且防水，能有效保持體溫。
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            水獺主要以魚類、昆蟲、貝類及其他水生動物為食，具有極強的游泳能力，並擅長潛水捕獵。牠們通常生活在河流、湖泊、沼澤等水域環境中。由於棲地破壞和水污染，一些水獺物種面臨瀕危威脅。</p>
+        </div>
+      </div>
+    </div>
+    <!--This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.-->
+    <div class="col">
+      <div class="card h-100">
+        <img src="animalImg/blackBear.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b><center>臺灣黑熊</center></b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            是臺灣唯一的熊類，體型中等，成年個體體重大約為80至150公斤，毛色通常為黑色，胸前有一個白色的「V」形斑紋。牠們主要棲息於臺灣的中高海拔山區，喜歡生活在森林、竹林和灌木叢中。
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            臺灣黑熊是雜食性動物，食物包括水果、植物、昆蟲及小型動物。由於棲地破壞、非法狩獵以及與人類活動的衝突，臺灣黑熊被列為瀕臨絕種物種。保護臺灣黑熊的工作包括建立保護區、監控棲息地和防止非法捕獵。</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" >
+        <img src="animalImg/dasymallus.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b><center>台灣狐蝠</center></b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            分布於琉球群島、菲律賓群島和台灣島的大型蝙蝠，展翼可達1公尺，身長約20公分，體重350至550公克。
+            其並不使用超音波定位，而是依照視覺與嗅覺尋找食物，以植物的果實、花朵、嫩葉為主食。住在樹上，而非陰暗的洞穴。由於數量稀少，於琉球及台灣都列入保護。該物種的模式產地在琉球群島。</p>
+          <br><small><p>吳昌鴻攝，版權：洄瀾風生態有限公司</p></small>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+</body>
+</html>

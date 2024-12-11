@@ -1,0 +1,29 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables"; // 引入變數檔案
+
+$primary: #ff5733;  // 設定主題顏色
+$secondary: #33b5ff;  // 設定次要顏色
+
+// 設定其他顏色
+$success: #4caf50;
+$info: #2196f3;
+$warning: #ff9800;
+$danger: #f44336;
+$light: #f1f1f1;
+$dark: #212121;
+
+// 這段程式碼設定了 theme-colors 變數
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "purple":     $purple-200
+);
+
+// 引入 Bootstrap 的核心樣式，這樣就能使用自定義的顏色了
+@import "node_modules/bootstrap/scss/bootstrap"; // 引入 Bootstrap 樣式
