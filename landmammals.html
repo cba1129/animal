@@ -1,106 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
-    <link rel="stylesheet" href="style.css">
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+  <link rel="stylesheet" href="style.css">
+</head>
 <style>
-    #introduceAnimal {
-      font-weight: 900 ;
-      color: beige;
-      font-size: x-large;
-    }
-    #extinct1{
-      /*width: 300px;*/
-      /*height: 100px;
+  #introduceAnimal {
+    font-weight: 900;
+    color: beige;
+    font-size: x-large;
+  }
+
+  #extinct1 {
+    /*width: 300px;*/
+    /*height: 100px;
       * left: ;*/
-      margin: 50px;
-      /*padding: 5px;
+    margin: 50px;
+    /*padding: 5px;
       /* border: 5px rgb(12, 12, 12) solid;
       width: 150px;
       height: 100px;*/
-    }
-    .title_text{
-      margin: 50px;
-    }
-    .btn-custom {
-       background-color: #4CAF50;  /* 设置背景色 */
-       color: white;  /* 设置文字颜色 */
-    }
-    #buttontext{
-      /*padding: 10px;*/
-       margin: 50px;
-    }
-    .hr-twill-colorful {
+  }
+
+  .title_text {
+    margin: 50px;
+  }
+
+  .btn-custom {
+    background-color: #4CAF50;
+    /* 设置背景色 */
+    color: white;
+    /* 设置文字颜色 */
+  }
+
+  #buttontext {
+    /*padding: 10px;*/
+    margin: 50px;
+  }
+
+  .hr-twill-colorful {
     border: 0;
     padding: 3px;
-    background: linear-gradient(135deg, red, orange,green, blue, purple);
+    background: linear-gradient(135deg, red, orange, green, blue, purple);
     --mask-image: repeating-linear-gradient(135deg, #000 0px, #000 1px, transparent 1px, transparent 6px);
     -webkit-mask-image: var(--mask-image);
     mask-image: var(--mask-image);
-}
+  }
 
-/*chatgpt卡片翻轉*/
-.card-container {
-  perspective: 1000px; /* 讓翻轉有深度效果 */
-}
+  /*chatgpt卡片翻轉*/
+  .card-container {
+    perspective: 1000px;
+    /* 讓翻轉有深度效果 */
+  }
 
-/* 卡片的基礎樣式 */
-.card_type{
-  /*width: 300px;/**/
-  height: 500px;/**/
-  transform-style: preserve-3d; /* 保持3D效果 */
-  transform: rotateY(0); /* 初始時不旋轉 */
-  transition: transform 0.6s; /* 設定翻轉的時間 */
-  cursor: pointer;
-}
+  /* 卡片的基礎樣式 */
+  .card_type {
+    /*width: 300px;/**/
+    height: 500px;
+    /**/
+    transform-style: preserve-3d;
+    /* 保持3D效果 */
+    transform: rotateY(0);
+    /* 初始時不旋轉 */
+    transition: transform 0.6s;
+    /* 設定翻轉的時間 */
+    cursor: pointer;
+  }
 
-/* 正面和背面樣式 */
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;/**/
-  height: 100%;/**/
-  backface-visibility: hidden; /* 隱藏背面 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: rgb(15, 15, 15);
-  border-radius: 10px;
-}
+  /* 正面和背面樣式 */
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    /**/
+    height: 100%;
+    /**/
+    backface-visibility: hidden;
+    /* 隱藏背面 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+    border-radius: 10px;
+  }
 
-/* 正面背景顏色 */
-/*.card-front {
+  /* 正面背景顏色 */
+  /*.card-front {
   background-color: #fcfcfc;
 }*/
 
-/* 背面背景顏色 */
-.card-back {
-  background-color: #e0f7bc;
-  transform: rotateY(180deg); /* 使背面反向顯示 */
-}
+  /* 背面背景顏色 */
+  .card-back {
+    background-color: #e0f7bc;
+    transform: rotateY(180deg);
+    /* 使背面反向顯示 */
+  }
 
-/* 當鼠標懸停時，卡片翻轉 */
-.card-container:hover .card_type{
-  transform: rotateY(180deg); /* 翻轉180度 */
-}
+  /* 當鼠標懸停時，卡片翻轉 */
+  .card-container:hover .card_type {
+    transform: rotateY(180deg);
+    /* 翻轉180度 */
+  }
 </style>
-      
+
 <body>
-    <!--圖片來源 台灣黑熊圖商標-->
-    <nav class="navbar navbar-dark bg-dark fixed-top" >
-      <div class="container-fluid" id = "BGC">
-        <a class="navbar-brand animate__fadeInDownBig" id = "introduceAnimal"  href="home.html"><h2>台灣保育動物介紹<h2>
-          <!--在熊的頭上<div id="buttontext">
+  <!--圖片來源 台灣黑熊圖商標-->
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid" id="BGC">
+      <a class="navbar-brand animate__fadeInDownBig" id="introduceAnimal" href="home.html">
+        <h2>台灣保育動物介紹<h2>
+            <!--在熊的頭上<div id="buttontext">
             <a  type="button" class="btn btn-custom " href ="landmammals.html" >哺乳類</a>
             <a type="button" class="btn btn-outline-success" href ="bird.html">鳥類</a>
             <button type="button" class="btn btn-outline-success">魚類</button>
@@ -110,31 +131,44 @@
             <button type="button" class="btn btn-outline-success">無脊椎類</button>
             <button type="button" class="btn btn-outline-success">其他</button>
           </div>-->
-          <small><img src="animalImg/Logo.png"></small></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">選單分類</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html"><h3>首頁<h3><hr></a>
-              </li>
-  
-              <li class="nav-item">
-                <a class="nav-link" href="landmammals.html"><h4>瀕臨絕種</h4></a>
-        
-              <li class="nav-item">
-                <a class="nav-link" href="#"><h4>珍貴稀有</h4></a>
-              
-              <li class="nav-item">
-                <a class="nav-link" href="#"><h4>其他應予保育</h4></a>
-          </div>
-          <!--選單內
+            <small><img src="animalImg/Logo.png"></small>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">選單分類</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">
+                <h3>首頁<h3>
+                    <hr>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="landmammals.html">
+                <h4>瀕臨絕種</h4>
+              </a>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <h4>珍貴稀有</h4>
+              </a>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <h4>其他應予保育</h4>
+              </a>
+        </div>
+        <!--選單內
           <div id="buttontext">
             <a  type="button" class="btn btn-custom " href ="landmammals.html" >哺乳類</a>
             <a type="button" class="btn btn-outline-success" href ="bird.html">鳥類</a>
@@ -145,21 +179,21 @@
             <button type="button" class="btn btn-outline-success">無脊椎類</button>
             <button type="button" class="btn btn-outline-success">其他</button>
           </div>-->
-        </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <div id="buttontext">
-    <a  type="button" class="btn btn-custom " href ="landmammals.html" >哺乳類</a>
-    <a type="button" class="btn btn-outline-success" href ="bird.html">鳥類</a>
+    <a type="button" class="btn btn-custom " href="landmammals.html">哺乳類</a>
+    <a type="button" class="btn btn-outline-success" href="bird.html">鳥類</a>
     <button type="button" class="btn btn-outline-success">魚類</button>
     <button type="button" class="btn btn-outline-success">爬蟲類</button>
     <button type="button" class="btn btn-outline-success">兩棲類</button>
@@ -167,87 +201,111 @@
     <button type="button" class="btn btn-outline-success">無脊椎類</button>
     <button type="button" class="btn btn-outline-success">其他</button>
   </div>
-<hr>
+  <hr>
 
-<div class="title_text"><center><h1><b>陸域</b><h1></center></div>
+  <div class="title_text">
+    <center>
+      <h1><b>陸域</b>
+        <h1>
+    </center>
+  </div>
   <!--以下是卡片-->
-<div class="row row-cols-1 row-cols-md-3 g-4" id ="extinct1">
-  <div class="col card-container">
-    <div class="card h-100 card_type" >
-      <div class ="card-front">
-        <a><img src="animalImg/brachyura.jpeg" class="card-img-top " alt="..."><br>
-          <br><h2 class="card-title "><b><br><center>臺灣雲豹</center></b></h2>
-        </a>
+  <div class="row row-cols-1 row-cols-md-3 g-4" id="extinct1">
+    <div class="col card-container">
+      <div class="card h-100 card_type">
+        <div class="card-front">
+          <a><img src="animalImg/brachyura.jpeg" class="card-img-top " alt="..."><br>
+            <br>
+            <h2 class="card-title "><b><br>
+                <center>臺灣雲豹</center>
+              </b></h2>
+          </a>
+        </div>
+        <div class="card-body card-back ">
+          <a>
+            <h4><b>臺灣雲豹</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                臺灣雲豹是臺灣特有的瀕危大型貓科動物，體型較大，體長可達90公分，尾巴長度約為60公分。牠們的毛色黃褐，身上有明顯的黑色斑點和條紋，像雲朵的圖案，因此得名「雲豹」。
+                主要分布於臺灣的山區和森林，主要以小型哺乳動物、鳥類及爬行動物為食。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                經過台美生態學者合組研究團隊調查，歷經13年研究，2013年4月宣布臺灣雲豹可能已經滅絕。</p>
+              <h5>
+          </a>
+        </div>
       </div>
-      <div class="card-body card-back ">
-        <a>
-          <h4 ><b>臺灣雲豹</b></h4>
-        <h5>
-          <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          臺灣雲豹是臺灣特有的瀕危大型貓科動物，體型較大，體長可達90公分，尾巴長度約為60公分。牠們的毛色黃褐，身上有明顯的黑色斑點和條紋，像雲朵的圖案，因此得名「雲豹」。
-          主要分布於臺灣的山區和森林，主要以小型哺乳動物、鳥類及爬行動物為食。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          經過台美生態學者合組研究團隊調查，歷經13年研究，2013年4月宣布臺灣雲豹可能已經滅絕。</p>
-        <h5>
-        </a>
+    </div>
+    <!--短-->
+    <div class="col">
+      <div class="card h-100">
+        <img src="animalImg/leopardCat.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>
+              <center>石虎</center>
+            </b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
+            牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="animalImg/lutra.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>
+              <center>水獺</center>
+            </b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            水獺是一種生活在水域附近的哺乳動物，屬於水獺科。牠們體型中等，身長約50至90公分，擁有長而有力的尾巴，適合游泳。水獺的毛色通常為棕色或灰色，毛皮厚實且防水，能有效保持體溫。
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            水獺主要以魚類、昆蟲、貝類及其他水生動物為食，具有極強的游泳能力，並擅長潛水捕獵。牠們通常生活在河流、湖泊、沼澤等水域環境中。由於棲地破壞和水污染，一些水獺物種面臨瀕危威脅。
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.-->
+    <div class="col">
+      <div class="card h-100">
+        <img src="animalImg/blackBear.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>
+              <center>臺灣黑熊</center>
+            </b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            是臺灣唯一的熊類，體型中等，成年個體體重大約為80至150公斤，毛色通常為黑色，胸前有一個白色的「V」形斑紋。牠們主要棲息於臺灣的中高海拔山區，喜歡生活在森林、竹林和灌木叢中。
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            臺灣黑熊是雜食性動物，食物包括水果、植物、昆蟲及小型動物。由於棲地破壞、非法狩獵以及與人類活動的衝突，臺灣黑熊被列為瀕臨絕種物種。保護臺灣黑熊的工作包括建立保護區、監控棲息地和防止非法捕獵。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="animalImg/dasymallus.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>
+              <center>台灣狐蝠</center>
+            </b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            分布於琉球群島、菲律賓群島和台灣島的大型蝙蝠，展翼可達1公尺，身長約20公分，體重350至550公克。
+            其並不使用超音波定位，而是依照視覺與嗅覺尋找食物，以植物的果實、花朵、嫩葉為主食。住在樹上，而非陰暗的洞穴。由於數量稀少，於琉球及台灣都列入保護。該物種的模式產地在琉球群島。</p>
+          <br><small>
+            <p>吳昌鴻攝，版權：洄瀾風生態有限公司</p>
+          </small>
+        </div>
       </div>
     </div>
   </div>
-  <!--短-->
-  <div class="col">
-    <div class="card h-100" >
-      <img src="animalImg/leopardCat.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><b><center>石虎</center></b></h5>
-        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
-          牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="animalImg/lutra.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><b><center>水獺</center></b></h5>
-        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          水獺是一種生活在水域附近的哺乳動物，屬於水獺科。牠們體型中等，身長約50至90公分，擁有長而有力的尾巴，適合游泳。水獺的毛色通常為棕色或灰色，毛皮厚實且防水，能有效保持體溫。
-          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          水獺主要以魚類、昆蟲、貝類及其他水生動物為食，具有極強的游泳能力，並擅長潛水捕獵。牠們通常生活在河流、湖泊、沼澤等水域環境中。由於棲地破壞和水污染，一些水獺物種面臨瀕危威脅。</p>
-      </div>
-    </div>
-  </div>
-  <!--This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.-->
-  <div class="col">
-    <div class="card h-100">
-      <img src="animalImg/blackBear.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><b><center>臺灣黑熊</center></b></h5>
-        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          是臺灣唯一的熊類，體型中等，成年個體體重大約為80至150公斤，毛色通常為黑色，胸前有一個白色的「V」形斑紋。牠們主要棲息於臺灣的中高海拔山區，喜歡生活在森林、竹林和灌木叢中。
-          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          臺灣黑熊是雜食性動物，食物包括水果、植物、昆蟲及小型動物。由於棲地破壞、非法狩獵以及與人類活動的衝突，臺灣黑熊被列為瀕臨絕種物種。保護臺灣黑熊的工作包括建立保護區、監控棲息地和防止非法捕獵。</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100" >
-      <img src="animalImg/dasymallus.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><b><center>台灣狐蝠</center></b></h5>
-        <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          分布於琉球群島、菲律賓群島和台灣島的大型蝙蝠，展翼可達1公尺，身長約20公分，體重350至550公克。
-          其並不使用超音波定位，而是依照視覺與嗅覺尋找食物，以植物的果實、花朵、嫩葉為主食。住在樹上，而非陰暗的洞穴。由於數量稀少，於琉球及台灣都列入保護。該物種的模式產地在琉球群島。</p>
-        <br><small><p>吳昌鴻攝，版權：洄瀾風生態有限公司</p></small>
-      </div>
-    </div>
-  </div>
-</div>
 
-<hr class ="hr-twill-colorful">
-<div class="title_text2"><h1><center>海域</center></h1></div>
-   
+  <hr class="hr-twill-colorful">
+  <div class="title_text2">
+    <h1>
+      <center>海域</center>
+    </h1>
+  </div>
 
-<!--
+
+  <!--
 <div class="card-container">
   <div class="card_type">
     <div class="card-front">
@@ -260,52 +318,55 @@
 </div>-->
 
 
-<!--以下是卡片-->
-<div class="row row-cols-1 row-cols-md-3 g-4 " id ="extinct1">
-  <div class="col card-container">
-    <div class="card h-100 card_type" >
-      <div class ="card-front">
-        <a><img src="animalImg/brachyura.jpeg" class="card-img-top " alt="..."><br>
-          <br><h2 class="card-title "><b><br><center>臺灣雲豹</center></b></h2>
-        </a>
-      </div>
-      <div class="card-body card-back ">
-        <a>
-          <h4 ><b>臺灣雲豹</b></h4>
-        <h5>
-          <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          臺灣雲豹是臺灣特有的瀕危大型貓科動物，體型較大，體長可達90公分，尾巴長度約為60公分。牠們的毛色黃褐，身上有明顯的黑色斑點和條紋，像雲朵的圖案，因此得名「雲豹」。
-          主要分布於臺灣的山區和森林，主要以小型哺乳動物、鳥類及爬行動物為食。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          經過台美生態學者合組研究團隊調查，歷經13年研究，2013年4月宣布臺灣雲豹可能已經滅絕。</p>
-        <h5>
-        </a>
-      </div>
-    </div>
-  </div>
-<!--短-->
-  <div class="col card-container">
-    <div class="card h-100 card_type" >
-      <div class ="card-front">
-        <a><img src="animalImg/leopardCat.jpeg" class="card-img-top " alt="..."><br>
-          <br><h2 class="card-title "><b><br><center>石虎</center></b></h2>
-        </a>
-      </div>
-      <div class="card-body card-back ">
-        <a>
-          <h4 ><b>石虎</b></h4>
-        <h5>
-          <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
-            牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
-        <h5>
-        </a>
+  <!--以下是卡片-->
+  <div class="row row-cols-1 row-cols-md-3 g-4 " id="extinct1">
+    <div class="col card-container">
+      <div class="card card_type">
+        <div class="card-front">
+          <a><img src="animalImg/brachyura.jpeg" class="card-img-top " alt="..."><br>
+            <br>
+            <h2 class="card-title "><b><br>
+                <center>臺灣雲豹</center>
+              </b></h2>
+          </a>
+        </div>
+        <div class="card-body card-back ">
+          <a>
+            <h4><b>臺灣雲豹</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                臺灣雲豹是臺灣特有的瀕危大型貓科動物，體型較大，體長可達90公分，尾巴長度約為60公分。牠們的毛色黃褐，身上有明顯的黑色斑點和條紋，像雲朵的圖案，因此得名「雲豹」。
+                主要分布於臺灣的山區和森林，主要以小型哺乳動物、鳥類及爬行動物為食。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                經過台美生態學者合組研究團隊調查，歷經13年研究，2013年4月宣布臺灣雲豹可能已經滅絕。</p>
+              <h5>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  
-  
-<!--
+    <!--短-->
+    <div class="col card-container">
+      <div class="card card_type">
+        <div class="card-front">
+          <a><img src="animalImg/leopardCat.jpeg" class="card-img-top " alt="..."><br>
+            <br>
+            <h2 class="card-title "><b><br>
+                <center>石虎</center>
+              </b></h2>
+          </a>
+        </div>
+        <div class="card-body card-back ">
+          <a>
+            <h4><b>石虎</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
+                牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
+              <h5>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--
   <div class="col card-container">
     <div class="card h-100 card_type" >
       <div class ="card-front">
@@ -326,50 +387,84 @@
       </div>
     </div>
   </div>  -->
-
-<div class="col ">
-  <div class="card h-100">
-    <img src="animalImg/lutra.jpeg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b><center>水獺</center></b></h5>
-      <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        水獺是一種生活在水域附近的哺乳動物，屬於水獺科。牠們體型中等，身長約50至90公分，擁有長而有力的尾巴，適合游泳。水獺的毛色通常為棕色或灰色，毛皮厚實且防水，能有效保持體溫。
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        水獺主要以魚類、昆蟲、貝類及其他水生動物為食，具有極強的游泳能力，並擅長潛水捕獵。牠們通常生活在河流、湖泊、沼澤等水域環境中。由於棲地破壞和水污染，一些水獺物種面臨瀕危威脅。</p>
+  <div class="col card-container">
+    <div class="card card_type">
+      <div class="card-front">
+        <a><img src="animalImg/leopardCat.jpeg" class="card-img-top " alt="..."><br>
+          <br>
+          <h2 class="card-title "><b><br>
+              <center>石虎</center>
+            </b></h2>
+        </a>
+      </div>
+      <div class="card-body card-back ">
+        <a>
+          <h4><b>石虎</b></h4>
+          <h5>
+            <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
+              牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
+            <h5>
+        </a>
+      </div>
     </div>
   </div>
-</div>
-<!--This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.-->
-<div class="col">
-  <div class="card h-100">
-    <img src="animalImg/blackBear.jpeg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b><center>臺灣黑熊</center></b></h5>
-      <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        是臺灣唯一的熊類，體型中等，成年個體體重大約為80至150公斤，毛色通常為黑色，胸前有一個白色的「V」形斑紋。牠們主要棲息於臺灣的中高海拔山區，喜歡生活在森林、竹林和灌木叢中。
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        臺灣黑熊是雜食性動物，食物包括水果、植物、昆蟲及小型動物。由於棲地破壞、非法狩獵以及與人類活動的衝突，臺灣黑熊被列為瀕臨絕種物種。保護臺灣黑熊的工作包括建立保護區、監控棲息地和防止非法捕獵。</p>
-    </div>
-  </div>
-</div>
-<div class="col">
-  <div class="card h-100" >
-    <img src="animalImg/dasymallus.jpeg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"><b><center>台灣狐蝠</center></b></h5>
-      <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        分布於琉球群島、菲律賓群島和台灣島的大型蝙蝠，展翼可達1公尺，身長約20公分，體重350至550公克。
-        其並不使用超音波定位，而是依照視覺與嗅覺尋找食物，以植物的果實、花朵、嫩葉為主食。住在樹上，而非陰暗的洞穴。由於數量稀少，於琉球及台灣都列入保護。該物種的模式產地在琉球群島。</p>
-      <br><small><p>吳昌鴻攝，版權：洄瀾風生態有限公司</p></small>
-    </div>
-  </div>
-</div>
-</div>
-
-
-
 
   
+
+    <div class="col ">
+      <div class="card">
+        <img src="animalImg/lutra.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>
+              <center>水獺</center>
+            </b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            水獺是一種生活在水域附近的哺乳動物，屬於水獺科。牠們體型中等，身長約50至90公分，擁有長而有力的尾巴，適合游泳。水獺的毛色通常為棕色或灰色，毛皮厚實且防水，能有效保持體溫。
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            水獺主要以魚類、昆蟲、貝類及其他水生動物為食，具有極強的游泳能力，並擅長潛水捕獵。牠們通常生活在河流、湖泊、沼澤等水域環境中。由於棲地破壞和水污染，一些水獺物種面臨瀕危威脅。
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.-->
+    <div class="col">
+      <div class="card">
+        <img src="animalImg/blackBear.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>
+              <center>臺灣黑熊</center>
+            </b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            是臺灣唯一的熊類，體型中等，成年個體體重大約為80至150公斤，毛色通常為黑色，胸前有一個白色的「V」形斑紋。牠們主要棲息於臺灣的中高海拔山區，喜歡生活在森林、竹林和灌木叢中。
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            臺灣黑熊是雜食性動物，食物包括水果、植物、昆蟲及小型動物。由於棲地破壞、非法狩獵以及與人類活動的衝突，臺灣黑熊被列為瀕臨絕種物種。保護臺灣黑熊的工作包括建立保護區、監控棲息地和防止非法捕獵。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="animalImg/dasymallus.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><b>
+              <center>台灣狐蝠</center>
+            </b></h5>
+          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            分布於琉球群島、菲律賓群島和台灣島的大型蝙蝠，展翼可達1公尺，身長約20公分，體重350至550公克。
+            其並不使用超音波定位，而是依照視覺與嗅覺尋找食物，以植物的果實、花朵、嫩葉為主食。住在樹上，而非陰暗的洞穴。由於數量稀少，於琉球及台灣都列入保護。該物種的模式產地在琉球群島。</p>
+          <br><small>
+            <p>吳昌鴻攝，版權：洄瀾風生態有限公司</p>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
   <!--
    <br>
    <div class="card" style="width: 18rem;" id = "extinct5">
@@ -394,48 +489,49 @@
       </div>
     </div>
   </div>-->
-  
 
 
 
-    <!-- 回到頂端按鈕 start -->
-<script>
-  //<![CDATA[
-  (function () {
-  $("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端'/>");
-  var img = "http://1.bp.blogspot.com/-zMfrIkyhlVs/Uh7FePoKU8I/AAAAAAAAHnA/WA0H_vbWAWc/s1600/go-top.png",
-  locatioin = 1/2, // 按鈕出現在螢幕的高度
-  right = 10, // 距離右邊 px 值
-  opacity = 0.3, // 透明度
-  speed = 500, // 捲動速度
-  $button = $("#goTopButton"),
-  $body = $(document),
-  $win = $(window);
-  $button.attr("src", img);
-  $button.on({
-    mouseover: function() {$button.css("opacity", 1);},
-    mouseout: function() {$button.css("opacity", opacity);},
-    click: function() {$("html, body").animate({scrollTop: 0}, speed);}
-    });
-  window.goTopMove = function () {
-    var scrollH = $body.scrollTop(),
-    winH = $win.height(),
-    css = {"top": winH * locatioin + "px", "position": "fixed", "right": right, "opacity": opacity};
-    if(scrollH > 20) {
-      $button.css(css);
-      $button.fadeIn("slow");
-      } 
-    else {
-      $button.fadeOut("slow");
-      }
-    };
-  $win.on({
-    scroll: function() {goTopMove();},
-    resize: function() {goTopMove();}
-    });
-  } )();
-  //]]>
+
+  <!-- 回到頂端按鈕 start -->
+  <script>
+    //<![CDATA[
+    (function () {
+      $("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端'/>");
+      var img = "http://1.bp.blogspot.com/-zMfrIkyhlVs/Uh7FePoKU8I/AAAAAAAAHnA/WA0H_vbWAWc/s1600/go-top.png",
+        locatioin = 1 / 2, // 按鈕出現在螢幕的高度
+        right = 10, // 距離右邊 px 值
+        opacity = 0.3, // 透明度
+        speed = 500, // 捲動速度
+        $button = $("#goTopButton"),
+        $body = $(document),
+        $win = $(window);
+      $button.attr("src", img);
+      $button.on({
+        mouseover: function () { $button.css("opacity", 1); },
+        mouseout: function () { $button.css("opacity", opacity); },
+        click: function () { $("html, body").animate({ scrollTop: 0 }, speed); }
+      });
+      window.goTopMove = function () {
+        var scrollH = $body.scrollTop(),
+          winH = $win.height(),
+          css = { "top": winH * locatioin + "px", "position": "fixed", "right": right, "opacity": opacity };
+        if (scrollH > 20) {
+          $button.css(css);
+          $button.fadeIn("slow");
+        }
+        else {
+          $button.fadeOut("slow");
+        }
+      };
+      $win.on({
+        scroll: function () { goTopMove(); },
+        resize: function () { goTopMove(); }
+      });
+    })();
+    //]]>
   </script>
   <!-- 回到頂端按鈕 end, Design by WFU BLOG -->
 </body>
+
 </html>
