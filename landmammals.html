@@ -37,7 +37,7 @@
     }
     #buttontext{
       /*padding: 10px;*/
-       margin: 30px;
+       margin: 100px;
     }
     .hr-twill-colorful {
     border: 0;
@@ -96,64 +96,64 @@
 </style>
       
 <body>
-        
-        <nav class="navbar navbar-dark bg-dark fixed-top">
-          <div class="container-fluid">
-            <a class="navbar-brand animate__fadeInDownBig" id = "introduceAnimal"  href="home.html">台灣保育類野生動物</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">選單分類</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.html"><h3>首頁<h3><hr></a>
-                  </li>
-      
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" >哺乳類</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">鳥類</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">爬蟲類</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">兩棲類</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">魚類</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">無脊椎類</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">其他物種</a>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      第一級保育類
-                    </a>
-                    
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                      <li><a class="dropdown-item" href="landmammals.html">哺乳類</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-              </div>
-            </div>
+    <!--圖片來源 台灣黑熊圖商標-->
+    <nav class="navbar navbar-dark bg-dark fixed-top" >
+      <div class="container-fluid" id = "BGC">
+        <a class="navbar-brand animate__fadeInDownBig" id = "introduceAnimal"  href="#"><h2>台灣保育動物介紹<h2>
+          <!--在熊的頭上<div id="buttontext">
+            <a  type="button" class="btn btn-custom " href ="landmammals.html" >哺乳類</a>
+            <a type="button" class="btn btn-outline-success" href ="bird.html">鳥類</a>
+            <button type="button" class="btn btn-outline-success">魚類</button>
+            <button type="button" class="btn btn-outline-success">爬蟲類</button>
+            <button type="button" class="btn btn-outline-success">兩棲類</button>
+            <button type="button" class="btn btn-outline-success">魚類</button>
+            <button type="button" class="btn btn-outline-success">無脊椎類</button>
+            <button type="button" class="btn btn-outline-success">其他</button>
+          </div>-->
+          <small><img src="animalImg/Logo.png"></small></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">選單分類</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-        </nav>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html"><h3>首頁<h3><hr></a>
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link" href="landmammals.html"><h4>瀕臨絕種</h4></a>
+        
+              <li class="nav-item">
+                <a class="nav-link" href="#"><h4>珍貴稀有</h4></a>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#"><h4>其他應予保育</h4></a>
+          </div>
+          <!--選單內
+          <div id="buttontext">
+            <a  type="button" class="btn btn-custom " href ="landmammals.html" >哺乳類</a>
+            <a type="button" class="btn btn-outline-success" href ="bird.html">鳥類</a>
+            <button type="button" class="btn btn-outline-success">魚類</button>
+            <button type="button" class="btn btn-outline-success">爬蟲類</button>
+            <button type="button" class="btn btn-outline-success">兩棲類</button>
+            <button type="button" class="btn btn-outline-success">魚類</button>
+            <button type="button" class="btn btn-outline-success">無脊椎類</button>
+            <button type="button" class="btn btn-outline-success">其他</button>
+          </div>-->
+        </div>
+      </div>
+    </nav>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>

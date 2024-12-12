@@ -41,6 +41,7 @@
       /*filter: blur(8px);  /* 设置背景的霧化效果 */
       z-index: 1;
   }
+
   /* 定义背景图片滑入动画 */
   @keyframes slideIn {
       0% {
@@ -51,15 +52,7 @@
       }
     }
   
-   /*.overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);  /* 半透明黑色遮罩 */
-      /*z-index: 2;  /* 保证遮罩层在背景和文本之上 */
-    /*} */
+   
     /* 向上滚动的文字 */
     .text {/*跑馬燈文字*/
       position: relative;
@@ -78,7 +71,7 @@
       left: 50%; /* 文字容器的水平居中 */
       transform: translate(-50%, -50%); /* 完全居中 */
       width: 80%; /* 容器宽度 */
-      height: 150px; /* 容器高度，显示一行文字的高度 */
+      height: 200px; /* 容器高度，显示一行文字的高度 */
       overflow: hidden; /* 隐藏超出容器的部分 */
       z-index: 2; /* 设置文字容器的 z-index 值，确保在背景之上 */
     }
@@ -90,7 +83,7 @@
         transform: translateY(-100%); /* 最终时文字滚动到屏幕顶部外部 */
       }
     }
-    /* 霧化效果 */
+    
 
      #BGC{/*上面選單的顏色*/
       background-color: rgb(112, 193,136);
@@ -124,28 +117,6 @@
             
             <li class="nav-item">
               <a class="nav-link" href="#"><h4>其他應予保育</h4></a>
-            
-            <!--  
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              哺乳類
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="landmammals.html">陸域</a></li>
-                <li><a class="dropdown-item" href="#">海域</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            -->
-          
-          <!--</ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>-->
         </div>
       </div>
     </div>
