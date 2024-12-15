@@ -17,7 +17,7 @@
 <style>
   #introduceAnimal {
     font-weight: 900;
-    color: beige;
+    color: rgb(12, 68, 8);
     font-size: x-large;
   }
 
@@ -48,7 +48,7 @@
     margin: 50px;
   }
 
-  .hr-twill-colorful {
+  .hr-twill-colorful { 
     border: 0;
     padding: 3px;
     background: linear-gradient(135deg, red, orange, green, blue, purple);
@@ -65,7 +65,7 @@
 
   /* 卡片的基礎樣式 */
   .card_type {
-    /*width: 300px;/**/
+    width: 300px;
     height: 500px;
     /**/
     transform-style: preserve-3d;
@@ -113,6 +113,13 @@
     transform: rotateY(180deg);
     /* 翻轉180度 */
   }
+  #BGC{/*上面選單的顏色*/
+      background-color: rgb(222, 220, 220);
+     }
+  #cardimg{/*卡片圖片大小*/
+      min-width: 50px;
+      min-height: 60px;
+  }
 </style>
 
 <body>
@@ -120,18 +127,20 @@
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid" id="BGC">
       <a class="navbar-brand animate__fadeInDownBig" id="introduceAnimal" href="home.html">
-        <h2>台灣保育動物介紹<h2>
-            <!--在熊的頭上<div id="buttontext">
-            <a  type="button" class="btn btn-custom " href ="landmammals.html" >哺乳類</a>
-            <a type="button" class="btn btn-outline-success" href ="bird.html">鳥類</a>
-            <button type="button" class="btn btn-outline-success">魚類</button>
-            <button type="button" class="btn btn-outline-success">爬蟲類</button>
-            <button type="button" class="btn btn-outline-success">兩棲類</button>
-            <button type="button" class="btn btn-outline-success">魚類</button>
-            <button type="button" class="btn btn-outline-success">無脊椎類</button>
-            <button type="button" class="btn btn-outline-success">其他</button>
-          </div>-->
-            <small><img src="animalImg/Logo.png"></small>
+          
+          <b><h2>台灣保育動物介紹
+            <div id="buttontext">
+              <a  type="button" class="btn btn-custom " href ="landmammals.html" >哺乳類</a>
+              <a type="button" class="btn btn-outline-success" href ="bird.html">鳥類</a>
+              <button type="button" class="btn btn-outline-success">魚類</button>
+              <button type="button" class="btn btn-outline-success">爬蟲類</button>
+              <button type="button" class="btn btn-outline-success">兩棲類</button>
+              <button type="button" class="btn btn-outline-success">魚類</button>
+              <button type="button" class="btn btn-outline-success">無脊椎類</button>
+              <button type="button" class="btn btn-outline-success">其他</button>
+            </div><h2></b>
+          <small><img src="animalImg/Logo.png"></small>
+        
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
         aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -323,21 +332,22 @@
     <div class="col card-container">
       <div class="card card_type">
         <div class="card-front">
-          <a><img src="animalImg/brachyura.jpeg" class="card-img-top " alt="..."><br>
+          <a><img src="animalImg/Enhydralutris.jpeg" class=" cardimg" alt="..."><br> <!--card-img-top-->
             <br>
             <h2 class="card-title "><b><br>
-                <center>臺灣雲豹</center>
+                <center>南方海獺</center>
               </b></h2>
           </a>
         </div>
         <div class="card-body card-back ">
           <a>
-            <h4><b>臺灣雲豹</b></h4>
+            <h4><b>南方海獺</b></h4>
             <h5>
               <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                臺灣雲豹是臺灣特有的瀕危大型貓科動物，體型較大，體長可達90公分，尾巴長度約為60公分。牠們的毛色黃褐，身上有明顯的黑色斑點和條紋，像雲朵的圖案，因此得名「雲豹」。
-                主要分布於臺灣的山區和森林，主要以小型哺乳動物、鳥類及爬行動物為食。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                經過台美生態學者合組研究團隊調查，歷經13年研究，2013年4月宣布臺灣雲豹可能已經滅絕。</p>
+                南方海獺是食肉目動物中最適應海中生活的物種，很少在陸地或冰上覓食，大半的時間都待在水裡，連生產與育幼也都在水中進行。
+                大部分時間裡，海獺不是仰躺著浮在水面上，就是潛入海床覓食。當牠們待在海面時，幾乎一直在整理毛皮，保持它的清潔與防水性。
+                <!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                </p>
               <h5>
           </a>
         </div>
@@ -347,20 +357,20 @@
     <div class="col card-container">
       <div class="card card_type">
         <div class="card-front">
-          <a><img src="animalImg/leopardCat.jpeg" class="card-img-top " alt="..."><br>
+          <a><img src="animalImg/chinensis.jpg" class="card-img-top " alt="..."><br>
             <br>
             <h2 class="card-title "><b><br>
-                <center>石虎</center>
+                <center>中華白海豚</center>
               </b></h2>
           </a>
         </div>
         <div class="card-body card-back ">
           <a>
-            <h4><b>石虎</b></h4>
+            <h4><b>中華白海豚</b></h4>
             <h5>
               <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
-                牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
+                中文通稱為白海豚，又稱太平洋駝海豚、中華駝海豚、粉紅海豚等，臺灣俗稱為媽祖魚，是一種背鰭基部隆起的海豚科小型哺乳動物，廣泛分布於西太平洋和東印度洋的熱帶及溫帶沿岸海域，偶爾出現在淡水中<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                膚色因地域、種群而異，多呈灰白相間的雜色，且帶有深色斑點；中國的種群初生時全身呈深灰色，隨著年齡增長淡化為獨特的粉白色，頗具觀賞價值，有學者認為這是一種過熱反應（如同人類在燥熱時會臉紅）。</p>
               <h5>
           </a>
         </div>
@@ -390,20 +400,20 @@
   <div class="col card-container">
     <div class="card card_type">
       <div class="card-front">
-        <a><img src="animalImg/leopardCat.jpeg" class="card-img-top " alt="..."><br>
+        <a><img src="animalImg/musculus.jpg" class="card-img-top " alt="..."><br>
           <br>
           <h2 class="card-title "><b><br>
-              <center>石虎</center>
+              <center>藍鯨</center>
             </b></h2>
         </a>
       </div>
       <div class="card-body card-back ">
         <a>
-          <h4><b>石虎</b></h4>
+          <h4><b>藍鯨</b></h4>
           <h5>
             <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
-              牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
+              藍鯨是屬於鬚鯨小目的海洋哺乳動物，也是地球史上已知最大的動物，文獻紀錄中的最大長度為29.9公尺，體重達199噸。藍鯨的身軀瘦長，呈流線型，背部青灰色，下身顏色比較淡。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              藍鯨群體會在夏季前往極地附近的捕食點，冬季則返回熱帶附近的繁殖點。也有證據顯示存在全年的定居，以及部分或基於年齡或性別的遷徙。</p>
             <h5>
         </a>
       </div>
@@ -461,7 +471,15 @@
     </div>
   </div>
 
-
+<div>
+<center>
+  其他各類野生動物公告，請參考
+  <a href="https://conservation.forest.gov.tw/">
+    農業部林業及自然保育署
+  </a>
+</center>
+<br>
+</div>
 
 
 
