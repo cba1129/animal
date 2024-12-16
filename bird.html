@@ -1,196 +1,768 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-</head>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel= "stylesheet" href="custom.CSS">
+</head>
 <style>
-    #introduceAnimal {
-      font-weight: 900 ;
-      color: beige;
-      font-size: x-large;
-      }
-    #extinct1{
-      /*width: 300px;*/
-      height: 100px;
-     /* left: ;*/
-      margin: 100px;
-      /*padding: 5px;
-     /* border: 5px rgb(12, 12, 12) solid;
+  #introduceAnimal {
+    font-weight: 900;
+    color: rgb(70, 70, 70);
+    font-size: x-large;
+  }
+
+  #extinct1 {
+    /*width: 300px;*/
+    /*height: 100px;
+      * left: ;*/
+    margin: 50px;
+    /*padding: 5px;
+      /* border: 5px rgb(12, 12, 12) solid;
       width: 150px;
       height: 100px;*/
-      
-    }
-    
-    .title_text{
-      margin: 30px;
-    }
-    .title_text1{
-      margin: 700px;
-      /*padding: 10px;*/
-      color: brown;
-    }
-    .btn-custom {
-  background-color: #4CAF50;  /* 设置背景色 */
-  color: white;  /* 设置文字颜色 */
-   }
-   #buttontext{
-  /*padding: 10px;*/
-  margin: 30px;
+  }
+
+  .title_text {
+    margin: 50px;
+  }
+
+  .btn-custom {
+    background-color: #4CAF50;
+    /* 设置背景色 */
+    color: white;
+    /* 设置文字颜色 */
+  }
+
+  #buttontext {
+    /*padding: 10px;*/
+    margin: 50px;
+  }
+
+  .hr-twill-colorful { 
+    border: 0;
+    padding: 3px;
+    background: linear-gradient(135deg, red, orange, green, blue, purple);
+    --mask-image: repeating-linear-gradient(135deg, #000 0px, #000 1px, transparent 1px, transparent 6px);
+    -webkit-mask-image: var(--mask-image);
+    mask-image: var(--mask-image);
+  }
+
+  /*chatgpt卡片翻轉*/
+  .card-container {
+    perspective: 1000px;
+    /* 讓翻轉有深度效果 */
+  }
+
+  /* 卡片的基礎樣式 */
+  .card_type {
+    max-width: 600px;
+    max-height: 500px;
+    min-width: 300px;
+    min-height: 600px;
+    /**/
+    transform-style: preserve-3d;
+    /* 保持3D效果 */
+    transform: rotateY(0);
+    /* 初始時不旋轉 */
+    transition: transform 0.6s;
+    /* 設定翻轉的時間 */
+    cursor: pointer;
+  }
+
+  /* 正面和背面樣式 */
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    /**/
+    height: 100%;
+    /**/
+    backface-visibility: hidden;
+    /* 隱藏背面 */
+    display: flex;/*有點問題*/
+    justify-content: center;
+    align-items: center;/*有點問題*/
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+    border-radius: 10px;
+  }
+
+  /* 正面背景顏色 */
+  /*.card-front {
+  background-color: #fcfcfc;
+}*/
+
+  /* 背面背景顏色 */
+  .card-back {
+    background-color: #e0f7bc;
+    transform: rotateY(180deg);
+    /* 使背面反向顯示 */
+  }
+
+  /* 當鼠標懸停時，卡片翻轉 */
+  .card-container:hover .card_type {
+    transform: rotateY(180deg);
+    /* 翻轉180度 */
+  }
+  /*#BGC{/*上面選單的顏色*/
+     /* background-color: rgb(222, 220, 220);
+     }*/
+  /*#cardimg{/*卡片圖片大小*/
+     /* min-width: 50px;
+      min-height: 60px;
+  }*/
+  .logoImg{
+    /*width: 890px;
+    height: 900px;
+    /* 預設圖片寬度 100% */
+    max-width: 80px;
+    max-height: 80px;
 }
-    
+  #cardRange{
+    min-width: 500px;
+    min-height: 188px;
+  }
+  /* 當螢幕寬度小於 768px 時，將圖片的寬度設置為 70% */
+  @media (max-width: 768px) {
+    .logoImg {
+        display: none;
+    }
+}
+/*進度條容器*/
+#progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #f3f3f3; /* 背景色 */
+  z-index: 9999;
+}
+
+/* 進度條的顏色 */
+#progress-bar {
+  height: 100%;
+  width: 0%;  /* 初始為 0% */
+  background-color: #03A9F4; /* 綠色進度條 */
+  transition: width 0.25s ease-in-out; /* 平滑過渡 */
+}
+/*底部文字外框*/
+.text-with-border {
+      display: inline-block; /* 讓文字自動適應大小 */
+      padding: 10px; /* 內邊距，讓文字與外框有些間距 */
+      border: 2px solid #000000; /* 外框顏色和粗細 */
+      border-radius: 5px; /* 讓邊框的角稍微圓滑 */
+    }
+/* 使外框文字置中 */
+.text-container {
+      display: flex;
+      justify-content: center; /* 水平置中 */
+      align-items: center; /* 垂直置中 */
+      height: 10vh; /* 讓容器高度為視窗高度，方便垂直置中 */
+    }
+  
+
 </style>
 
+
+
 <body>
-            
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand animate__fadeInDownBig" id = "introduceAnimal"  href="home.html">台灣保育類野生動物</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">選單分類</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="home.html"><h3>首頁<h3><hr></a>
-                </li>
-    
-                <li class="nav-item">
-                  <a class="nav-link" href="#" >哺乳類</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">鳥類</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">爬蟲類</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">兩棲類</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">魚類</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">無脊椎類</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">其他物種</a>
-                </li>
+  <!--進度條-->
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
 
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    第一級保育類
-                  </a>
-                  
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="landmammals.html">哺乳類</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-            </div>
-          </div>
+  <div class="content">
+  <!--圖片來源 台灣黑熊圖商標-->
+  <nav class="navbar navbar-dark bg-dark fixed-top" >
+    <div class="container-fluid" >
+      <a class="navbar-brand animate__fadeInDownBig " id="introduceAnimal" href="home.html">
+      <b><h1>台灣保育動物介紹__鳥類<h1></b>
+          <img src="animalImg/Logo.png" id="logoImg" class="logoImg" >        
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">選單分類</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
         </div>
-      </nav>
-<br>
-<br>
-<br>
-<div id="buttontext">
-  <a  type="button" class="btn btn-outline-success" href ="landmammals.html" >哺乳類</a>
-  <a type="button" class="btn btn-custom" herf ="#">鳥類</a>
-  <button type="button" class="btn btn-outline-success">魚類</button>
-  <button type="button" class="btn btn-outline-success">Danger</button>
-  <button type="button" class="btn btn-outline-success">Warning</button>
-  <button type="button" class="btn btn-outline-success">Info</button>
-  <button type="button" class="btn btn-outline-success">Light</button>
-  <button type="button" class="btn btn-outline-success">Dark</button>
-</div>
-<hr>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">
+                <h3>首頁<h3>
+                    <hr>
+              </a>
+            </li>
 
-<div class="title_text"></div>
-    <!--以下是卡片-->
-  <div class="row row-cols-1 row-cols-md-3 g-4" id ="extinct1">
-      <div class="col"><!--長-->
-      <div class="card h-100"  >
-        <img src="animalImg/e.jpeg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><b><center>赫氏角鷹</center></b></h5>
-          <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            又名雄鷹。是一種中型猛禽，分布於亞洲的山區和草原地帶。牠們體型中等，翼展可達1.4米，羽毛呈暗褐色，胸部有斑紋。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            他們有極為銳利的視力，主要捕食小型哺乳動物、鳥類和爬行類。牠們擅長長時間在高空滑行，利用上升氣流捕捉獵物，具有強大的飛行能力，是高山地區的頂級捕食者之一。</p>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                瀕臨絕種
+              </a>
+              
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="landmammals.html">哺乳類</a></li>
+                <li><a class="dropdown-item" href="bird.html">鳥類</a></li>
+                <li><a class="dropdown-item" href="bird.html">爬蟲類</a></li>
+                <li><a class="dropdown-item" href="bird.html">兩棲類</a></li>
+                <li><a class="dropdown-item" href="bird.html">魚類</a></li>
+                <li><a class="dropdown-item" href="bird.html">無脊椎類</a></li>
+                <li><a class="dropdown-item" href="bird.html"></a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">其他物種</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                珍貴稀有
+              </a>
+              
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="landmammals.html">哺乳類</a></li>
+                <li><a class="dropdown-item" href="bird.html">鳥類</a></li>
+                <li><a class="dropdown-item" href="bird.html">爬蟲類</a></li>
+                <li><a class="dropdown-item" href="bird.html">兩棲類</a></li>
+                <li><a class="dropdown-item" href="bird.html">魚類</a></li>
+                <li><a class="dropdown-item" href="bird.html">無脊椎類</a></li>
+                <li><a class="dropdown-item" href="bird.html"></a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">其他物種</a></li>
+              </ul>
+            </li>
+          
+            
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <h4>其他應予保育</h4>
+              </a>
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+
+ <br>
+  <br>
+  <br>
+  <hr>
+
+  <div class="title_text">
+    <center>
+      <h1 style="text-shadow: 1px 1px 3px rgb(207, 138, 8);" >陸域
+        <h1>
+    </center>
+  </div>
+  
+  <!--以下是卡片-->
+  <div class="row row-cols-1 row-cols-md-3 g-4" id="extinct1" >
+    <div class="col card-container " "><!---->
+      <div class="card h-100 card_type  " style="background-color:rgb(233, 227, 206);">
+        <div class="card-front">
+          <a><img src="animalImg/e.jpeg" class="card-img-top " alt="..."><br>
+            <br>
+            <h2 class="card-title "><b><br>
+                <center>赫氏角鷹</center>
+              </b></h2>
+          </a>
+        </div>
+        <div class="card-body card-back " style="background-color:rgb(210, 180, 140);">
+          <a>
+            <h4><b>赫氏角鷹</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                又名雄鷹。是一種中型猛禽，分布於亞洲的山區和草原地帶。牠們體型中等，翼展可達1.4米，羽毛呈暗褐色，胸部有斑紋。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                他們有極為銳利的視力，主要捕食小型哺乳動物、鳥類和爬行類。牠們擅長長時間在高空滑行，利用上升氣流捕捉獵物，具有強大的飛行能力，是高山地區的頂級捕食者之一。</p>
+              <h5>
+          </a>
         </div>
       </div>
     </div>
     <!--短-->
-    <div class="col">
-      <div class="card h-100" >
+    <div class="col card-container "><!---->
+      <div class="card h-100 card_type  " style="background-color:rgb(233, 227, 206);">
+        <div class="card-front">
+          <a><img src="animalImg/longimembris.jpeg" class="card-img-top " alt="..."><br>
+            
+            <h2 class="card-title "><b><br>
+                <center>草鴞</center>
+              </b></h2>
+          </a>
+        </div>
+        <div class="card-body card-back " style="background-color:rgb(210, 180, 140);">
+          <a>
+            <h4><b>草鴞</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                草鴞是一種中等大小的鴞，大小類似於倉鴞。成年雄性體長從32至38 cm 起，而較大的雌性體長可達35至42 cm。翼展約為100至116 cm。
+                牠們的上半部分為深棕色或棕褐色，帶有淺色斑點。牠們的翅膀上有黑色和棕褐色的條紋，喙非常淡，腿部有羽毛，眼睛為深棕色。像所有草鴞屬的鴞一樣，牠有一個心形的臉盤，邊緣為棕褐色並帶有白色。
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;草鴞的主要叫聲類似於許多其他草鴞屬鴞。一聲響亮的嘶嘶尖叫聲，但草鴞的尖叫聲比倉鴞更響亮，但比面罩鴞安靜。
+            </p>
+              <h5>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--不會翻轉的卡片石虎<div class="col">
+      <div class="card h-100">
         <img src="animalImg/leopardCat.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><b><center>石虎</center></b></h5>
+          <h5 class="card-title"><b>
+              <center>石虎</center>
+            </b></h5>
           <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             臺灣石虎是臺灣特有的野生小型貓科動物，身長約45至60公分，體重約1至2公斤，毛色黃褐帶有黑斑。
             牠們主要栖息於山區和森林，喜歡在密集植被中活動，以小型哺乳動物和鳥類為食。臺灣石虎目前面臨棲地破壞和非法獵捕的威脅，已被列為瀕臨絕種物種，保護工作正積極進行中。</p>
         </div>
       </div>
+    </div>-->
+    <div class="col card-container "><!---->
+      <div class="card h-100 card_type  " style="background-color:rgb(233, 227, 206);">
+        <div class="card-front">
+          <a><img src="animalImg/maleCinnamomeus.jpeg"  alt="...">
+            <br>
+            <img src="animalImg/femaleCinnamomeus.jpeg"  >
+            <h2 class="card-title "><b><br>
+                <center>山麻雀</center>
+              </b><small>(上面雄性下面雌性)</small></h2>
+          </a>
+        </div>
+        <div class="card-body card-back " style="background-color:rgb(210, 180, 140);">
+          <a>
+            <h4><b>山麻雀</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                是麻雀科麻雀屬的一種鳥類，見於亞洲森林和村落，主要出現在山區。這種小型食種子鳥擁有粗壯的喙，體長14至15 cm。其羽毛主要為上部溫暖的赤褐色，下部灰色。牠展現兩性異形，兩性羽毛的圖案與家麻雀的相對應性別相似。牠的叫聲為甜美且富有音樂感的啁啾聲，連續發出時形成一首歌曲。
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                山麻雀為台灣稀有留鳥。山麻雀分布於海拔200-2200公尺之間，集中於雲林縣、嘉義縣、台南市、高雄市及屏東縣等地山區，近幾年面臨急速消失危機，剩不到1000隻，成為瀕臨絕種保育類動物。</p>
+              <h5>
+          </a>
+        </div>
+      </div>
     </div>
+    <!--不會翻轉的卡片水獺
     <div class="col">
       <div class="card h-100">
         <img src="animalImg/lutra.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><b><center>水獺</center></b></h5>
+          <h5 class="card-title"><b>
+              <center>水獺</center>
+            </b></h5>
           <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             水獺是一種生活在水域附近的哺乳動物，屬於水獺科。牠們體型中等，身長約50至90公分，擁有長而有力的尾巴，適合游泳。水獺的毛色通常為棕色或灰色，毛皮厚實且防水，能有效保持體溫。
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            水獺主要以魚類、昆蟲、貝類及其他水生動物為食，具有極強的游泳能力，並擅長潛水捕獵。牠們通常生活在河流、湖泊、沼澤等水域環境中。由於棲地破壞和水污染，一些水獺物種面臨瀕危威脅。</p>
+            水獺主要以魚類、昆蟲、貝類及其他水生動物為食，具有極強的游泳能力，並擅長潛水捕獵。牠們通常生活在河流、湖泊、沼澤等水域環境中。由於棲地破壞和水污染，一些水獺物種面臨瀕危威脅。
+          </p>
+        </div>
+      </div>
+    </div>--> 
+    <!--This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.-->
+
+    <div class="col card-container "><!---->
+      <div class="card h-100 card_type  " style="background-color:rgb(233, 227, 206);">
+        <div class="card-front">
+          <a><img src="animalImg/minor.jpeg" class="card-img-top " alt="..."><br>
+            <br>
+            <h2 class="card-title "><b><br>
+                <center>黑面琵鷺</center>
+              </b></h2>
+          </a>
+        </div>
+        <div class="card-body card-back " style="background-color:rgb(210, 180, 140);">
+          <a>
+            <h4><b>黑面琵鷺</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                台灣賞鳥人士則俗稱為「黑琵」。因其扁平如湯匙狀的長嘴，與中國樂器中的琵琶極為相似，因而得名；亦因其姿態優雅，又有「黑面天使」和「黑面舞者」的雅稱。有琵琶的大嘴是琵鷺類鳥類共有的特徵，而黑面琵鷺是六種琵鷺種體型最小者。
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                本性機警，生活於河口、潮池、濕地或潮間帶，具群居性，偶爾會與警戒性較高的水鳥聚在一起；主要在濕地或魚塭等淺水域覓食，以喙微張並在水裡掃動的方式搜尋魚蝦或甲殼類。休息時會出現嬉戲的行為，同伴間會互相理羽。</p>
+              <h5>
+          </a>
         </div>
       </div>
     </div>
-    <!--This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.-->
+    <!--不會卡片翻轉的台灣黑熊
     <div class="col">
       <div class="card h-100">
         <img src="animalImg/blackBear.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><b><center>臺灣黑熊</center></b></h5>
+          <h5 class="card-title"><b>
+              <center>臺灣黑熊</center>
+            </b></h5>
           <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             是臺灣唯一的熊類，體型中等，成年個體體重大約為80至150公斤，毛色通常為黑色，胸前有一個白色的「V」形斑紋。牠們主要棲息於臺灣的中高海拔山區，喜歡生活在森林、竹林和灌木叢中。
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            臺灣黑熊是雜食性動物，食物包括水果、植物、昆蟲及小型動物。由於棲地破壞、非法狩獵以及與人類活動的衝突，臺灣黑熊被列為瀕臨絕種物種。保護臺灣黑熊的工作包括建立保護區、監控棲息地和防止非法捕獵。</p>
+            臺灣黑熊是雜食性動物，食物包括水果、植物、昆蟲及小型動物。由於棲地破壞、非法狩獵以及與人類活動的衝突，臺灣黑熊被列為瀕臨絕種物種。保護臺灣黑熊的工作包括建立保護區、監控棲息地和防止非法捕獵。
+          </p>
+        </div>
+      </div>
+    </div>-->
+
+    <div class="col card-container " style="display: none;"><!---->
+      <div class="card h-100 card_type  " style="background-color:rgb(233, 227, 206);">
+        <div class="card-front">
+          <a><img src="animalImg/dasymallus.jpeg" class="card-img-top " alt="..."><br>
+            <br>
+            <h2 class="card-title "><b><br>
+                <center>台灣狐蝠</center>
+              </b></h2>
+          </a>
+        </div>
+        <div class="card-body card-back " style="background-color:rgb(210, 180, 140);">
+          <a>
+            <h4><b>台灣狐蝠</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                分布於琉球群島、菲律賓群島和台灣島的大型蝙蝠，展翼可達1公尺，身長約20公分，體重350至550公克。
+                其並不使用超音波定位，而是依照視覺與嗅覺尋找食物，以植物的果實、花朵、嫩葉為主食。住在樹上，而非陰暗的洞穴。由於數量稀少，於琉球及台灣都列入保護。該物種的模式產地在琉球群島。</p>
+              <br><small>
+                <p>吳昌鴻攝，版權：洄瀾風生態有限公司</p>
+              <h5>
+          </a>
         </div>
       </div>
     </div>
+    <!--不會翻轉的胡服卡片
     <div class="col">
-      <div class="card h-100" >
+      <div class="card h-100">
         <img src="animalImg/dasymallus.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><b><center>台灣狐蝠</center></b></h5>
+          <h5 class="card-title"><b>
+              <center>台灣狐蝠</center>
+            </b></h5>
           <p class="card-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             分布於琉球群島、菲律賓群島和台灣島的大型蝙蝠，展翼可達1公尺，身長約20公分，體重350至550公克。
             其並不使用超音波定位，而是依照視覺與嗅覺尋找食物，以植物的果實、花朵、嫩葉為主食。住在樹上，而非陰暗的洞穴。由於數量稀少，於琉球及台灣都列入保護。該物種的模式產地在琉球群島。</p>
-          <br><small><p>吳昌鴻攝，版權：洄瀾風生態有限公司</p></small>
+          <br><small>
+            <p>吳昌鴻攝，版權：洄瀾風生態有限公司</p>
+          </small>
         </div>
+      </div>
+    </div>-->
+    <div class="col card-container" style="display: none;">
+      <div class="card h-100 card_type" style="background-color:rgb(233, 227, 206);">
+        <div class="card-front">
+          <a><img src="animalImg/Enhydralutris.jpeg" class="card-img-top " alt="..."><br>
+            <br>
+            <h2 class="card-title "><b><br>
+                <center>南方海獺</center>
+              </b></h2>
+          </a>
+        </div>
+        <div class="card-body card-back " style="background-color:rgb(210, 180, 140);">
+          <a>
+            <h4><b>南方海獺</b></h4>
+            <h5>
+              <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                南方海獺是食肉目動物中最適應海中生活的物種，很少在陸地或冰上覓食，大半的時間都待在水裡，連生產與育幼也都在水中進行。
+                大部分時間裡，海獺不是仰躺著浮在水面上，就是潛入海床覓食。當牠們待在海面時，幾乎一直在整理毛皮，保持它的清潔與防水性。</p>
+              <h5>
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+
+  
+
+
+  <!--
+<div class="card-container">
+  <div class="card_type">
+    <div class="card-front">
+      <h2>正面</h2>
+    </div>
+    <div class="card-back">
+      <h2>背面</h2>
+    </div>
+  </div>
+</div>-->
+
+<hr class="hr-twill-colorful">
+<div class="title_text2">
+    <h1 style="text-shadow: 1px 1px 3px rgb(110, 229, 245);">
+      <center>海域</center>
+    </h1>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4" id="extinct1">
+  <div class="col card-container "><!---->
+    <div class="card h-100 card_type  " style="background-color:rgb(135, 206, 235);">
+      <div class="card-front">
+        <a><img src="animalImg/bernsteini.jpeg" class="card-img-top " alt="..."><br>
+          <br>
+          <h2 class="card-title "><b><br>
+              <center>黑嘴端鳳頭燕鷗</center>
+            </b></h2>
+        </a>
+      </div>
+      <div class="card-body card-back " style="background-color:rgb(118, 225, 199);">
+        <a>
+          <h4><b>黑嘴端鳳頭燕鷗</b></h4>
+          <h5>
+            <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              體長約 38 公分，羽色為淺灰色，具醒目的黑色鳳頭，繁殖期頭頂亦為黑色。喙部黃色而先端三分之一為黑色，最尖端部分為白色，因此也有黑嘴端鳳頭燕鷗的名稱。尾羽開叉而似燕尾。
+             </p>
+            <h5>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--短-->
+  <div class="col card-container "><!---->
+    <div class="card h-100 card_type  " style="background-color:rgb(135, 206, 235);">
+      <div class="card-front">
+        <a><img src="animalImg/albatrus.jpeg" class="card-img-top " alt="..."><br>
+          <br>
+          <h2 class="card-title "><b><br>
+              <center>短尾信天翁</center>
+            </b></h2>
+        </a>
+      </div>
+      <div class="card-body card-back " style="background-color:rgb(118, 225, 199);">
+        <a>
+          <h4><b>短尾信天翁</b></h4>
+          <h5>
+            <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              是最大的信天翁，翅膀展開可以有3公尺寬。成年鳥可達11公斤。它也是唯一白色身體的信天翁，只在頭頸泛淡黃色。它擁有白背，翅膀外半部是黑色，藍尖粉紅色的嘴，淡藍色的腿腳。年輕的鳥是棕黑色，成長期間逐漸發白。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              短尾信天翁是北太平洋海鳥，曾繁殖於澎湖列島。夏季時，住在白令海、阿拉斯加灣、阿留申群島，冬季時，南下飛到日本附近海域繁殖。</p>
+            <h5>
+        </a>
       </div>
     </div>
   </div>
   
+  <div class="col card-container "><!---->
+    <div class="card h-100 card_type  " style="background-color:rgb(135, 206, 235);">
+      <div class="card-front">
+        <a><img src="animalImg/nigripes.jpeg" class="card-img-top " alt="..."><br>
+          <br>
+          <h2 class="card-title "><b><br>
+              <center>黑腳信天翁</center>
+            </b></h2>
+        </a>
+      </div>
+      <div class="card-body card-back " style="background-color:rgb(118, 225, 199);">
+        <a>
+          <h4><b>黑腳信天翁</b></h4>
+          <h5>
+            <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              是一種大型的海鳥，分布於北太平洋以及中國大陸的沿海、台灣海峽，多生活於大洋中的島嶼。該物種的模式產地在太平洋。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              黑腳信天翁是信天翁家族中的小型成員（與大多數其他海鳥相比仍然很大），幾乎全身都是黑色羽毛。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              它的喙和腳也是全黑的，只有一種羽毛。黑腳信天翁在遠洋水域捕食，取食飛魚卵、活魚、魚廢料、魷魚，以及少量的甲殼類動物。它們也會取食浮在水面的碎片，包括塑膠。</p>
+            <h5>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col card-container "><!---->
+    <div class="card h-100 card_type  " style="background-color:rgb(135, 206, 235);">
+      <div class="card-front">  
+        <a><img src="animalImg/humboldti.jpeg" class="card-img-top " alt="..."><br>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Status_iucn3.1_VU_zh-hant.svg/220px-Status_iucn3.1_VU_zh-hant.svg.png"  style="display: none;">
+          <br>
+          <h2 class="card-title "><b><br>
+              <center>洪保德環企鵝</center>
+            </b></h2>
+        </a>
+      </div>
+      <div class="card-body card-back " style="background-color:rgb(118, 225, 199);">
+        <a>
+          <h4><b>洪保德環企鵝</b></h4>
+          <h5>
+            <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              是一種分佈於南美洲的企鵝，主要在秘魯和智利沿岸繁殖。洪保德環企鵝是中型的企鵝，成鳥約65-70公分高。頭部呈黑色，有一條白色寬帶從眼後過耳朵一直延伸至下頜附近；有的背部帶有白色斑點。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              洪保德環企鵝的保護現狀為易危，主要由於過度捕漁導致族群數量下降。現存數量估計在32,000 隻之間。然而形成對比的是，在日本動物園中的洪保德環企鵝因為適應了環境反而大量繁殖，園方不得不用石膏等材料製成假蛋、將真正的企鵝蛋換掉來抑制族群的增長。
+            </p>
+            <h5>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col card-container " style="display: none;"><!---->
+    <div class="card h-100 card_type  " style="background-color:rgb(135, 206, 235);">
+      <div class="card-front">
+        <a><img src="animalImg/blackBear.jpeg" class="card-img-top " alt="..."><br>
+          <br>
+          <h2 class="card-title "><b><br>
+              <center>臺灣黑熊</center>
+            </b></h2>
+        </a>
+      </div>
+      <div class="card-body card-back ">
+        <a>
+          <h4><b>臺灣黑熊</b></h4>
+          <h5>
+            <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              是臺灣唯一的熊類，體型中等，成年個體體重大約為80至150公斤，毛色通常為黑色，胸前有一個白色的「V」形斑紋。牠們主要棲息於臺灣的中高海拔山區，喜歡生活在森林、竹林和灌木叢中。
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              臺灣黑熊是雜食性動物，食物包括水果、植物、昆蟲及小型動物。由於棲地破壞、非法狩獵以及與人類活動的衝突，臺灣黑熊被列為瀕臨絕種物種。保護臺灣黑熊的工作包括建立保護區、監控棲息地和防止非法捕獵。</p>
+            <h5>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col card-container " style="display: none;"><!---->
+    <div class="card h-100 card_type  ">
+      <div class="card-front">
+        <a><img src="animalImg/dasymallus.jpeg" class="card-img-top " alt="..."><br>
+          <br>
+          <h2 class="card-title "><b><br>
+              <center>台灣狐蝠</center>
+            </b></h2>
+        </a>
+      </div>
+      <div class="card-body card-back ">
+        <a>
+          <h4><b>台灣狐蝠</b></h4>
+          <h5>
+            <p class="card-text ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              分布於琉球群島、菲律賓群島和台灣島的大型蝙蝠，展翼可達1公尺，身長約20公分，體重350至550公克。
+              其並不使用超音波定位，而是依照視覺與嗅覺尋找食物，以植物的果實、花朵、嫩葉為主食。住在樹上，而非陰暗的洞穴。由於數量稀少，於琉球及台灣都列入保護。該物種的模式產地在琉球群島。</p>
+            <br><small>
+              <p>吳昌鴻攝，版權：洄瀾風生態有限公司</p>
+            <h5>
+        </a>
+      </div>
+    </div>
+  </div>   
+</div>
+    
 
 
 
+<div class="text-container">
+<div class="text-with-border ">
+  其他各類野生動物公告，請參考
+  <a href="https://conservation.forest.gov.tw/">
+    農業部林業及自然保育署
+  </a>
+<br>
+</div>
+</div>
+<script>
+  // 監聽滾動事件
+  window.onscroll = function() {
+    updateProgressBar();
+  };
+  
+  function updateProgressBar() {
+    // 計算總頁面高度
+    var scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    // 計算當前滾動位置
+    var scrollPosition = window.scrollY;
+    
+    // 計算進度百分比
+    var progress = (scrollPosition / scrollHeight) * 100;
+    
+    // 更新進度條的寬度
+    document.getElementById('progress-bar').style.width = progress + '%';
+  }
+    </script>
+  
 
+  <!-- 回到頂端按鈕 start -->
+  <script >
+    //<![CDATA[
+    (function () {
+      $("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端'/>");
+      var img = "http://1.bp.blogspot.com/-zMfrIkyhlVs/Uh7FePoKU8I/AAAAAAAAHnA/WA0H_vbWAWc/s1600/go-top.png",
+        locatioin = 1 / 2, // 按鈕出現在螢幕的高度
+        right = 10, // 距離右邊 px 值
+        opacity = 0.3, // 透明度
+        speed = 500, // 捲動速度
+        $button = $("#goTopButton"),
+        $body = $(document),
+        $win = $(window);
+      $button.attr("src", img);
+      $button.on({
+        mouseover: function () { $button.css("opacity", 1); },
+        mouseout: function () { $button.css("opacity", opacity); },
+        click: function () { $("html, body").animate({ scrollTop: 0 }, speed); }
+      });
+      window.goTopMove = function () {
+        var scrollH = $body.scrollTop(),
+          winH = $win.height(),
+          css = { "top": winH * locatioin + "px", "position": "fixed", "right": right, "opacity": opacity };
+        if (scrollH > 20) {
+          $button.css(css);
+          $button.fadeIn("slow");
+        }
+        else {
+          $button.fadeOut("slow");
+        }
+      };
+      $win.on({
+        scroll: function () { goTopMove(); },
+        resize: function () { goTopMove(); }
+      });
+    })();
+    //]]
+    </script>
+    <script>
+
+    // 當視窗大小改變時，更新頁面樣式
+window.addEventListener('resize', function() {
+    let screenWidth = window.innerWidth;
+    
+    if (screenWidth < 768) {
+        document.body.classList.add('mobile');  // 添加 mobile 類
+        document.body.classList.remove('desktop');  // 移除 desktop 類
+    } else {
+        document.body.classList.add('desktop');  // 添加 desktop 類
+        document.body.classList.remove('mobile');  // 移除 mobile 類
+    }
+});
+
+// 偵測螢幕大小並隱藏或顯示圖片
+function checkScreenSize() {
+    let screenWidth = window.innerWidth;  // 獲取螢幕寬度
+    let logoImage = document.getElementById('logoImage');  // 取得圖片元素
+
+    if (screenWidth < 768) {  // 當螢幕寬度小於 768px (手機螢幕)
+        logoImage.style.display = 'none';  // 隱藏圖片
+    } else {
+        logoImage.style.display = 'block';  // 顯示圖片
+    }
+}
+
+// 初次加載時檢查螢幕大小
+checkScreenSize();
+
+// 當螢幕大小改變時，重新檢查並調整圖片顯示
+window.addEventListener('resize', checkScreenSize);
+</script>
+
+</body>
+
+</html>
+  
+
+
+ 
 </body>
 </html>

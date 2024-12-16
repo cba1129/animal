@@ -1,3 +1,6 @@
 :root,[data-bs-theme=dark] {
---bs-dark-rgb:206,206,206;    
+--bs-dark-rgb:192,192,192;    
+}
+/*:root,[h-100]{
+    h-100:
 }
