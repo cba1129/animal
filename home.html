@@ -27,22 +27,22 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url("animalImg/background.jpeg");  /* 替换成你的图片路径 */
+    background-image: url("animalImg/background.jpeg");  
       background-size: cover;
       background-position: center;
       transform: translateX(-100%);
       animation: slideIn 3s forwards; 
-      /*filter: blur(8px);  /* 设置背景的霧化效果 */
+      /*filter: blur(8px);  /*設定背景的霧化效果 */
       z-index: 1;
   }
 
-  /* 定义背景图片滑入动画 */
+  /* 定義背景圖片動畫 */
   @keyframes slideIn {
       0% {
-        transform: translateX(-100%);  /* 动画开始时完全透明 */
+        transform: translateX(-100%);  /* 動畫開始時完全透明 */
       }
       100% {
-        transform: translateX(0);  /* 动画结束时完全可见 */
+        transform: translateX(0);  /* 動畫結束完全可見 */
       }
     }
   
@@ -51,14 +51,14 @@
     .text {/*跑馬燈文字*/
       position: relative;
       font-family: 'Courier New', Courier, monospace;
-      color: white; /* 字体颜色 */
-      font-size: 36px; /* 字体大小 */
+      color: white; /* 字體颜色 */
+      font-size: 36px; /* 字體大小 */
       font-weight: bold;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 给文字添加阴影增强可读性 */
       /*white-space: nowrap; /* 防止文本换行 */
-      animation: marquee 15s linear infinite; /* 文字从下往上滚动 */
+      animation: marquee 15s linear infinite; /* 文字从下往上滚動 */
     }
-    /* 设置跑马灯容器 */
+    /* 設定跑馬燈容器 */
     .text-container {
       position: absolute;
       top: 50%; /* 文字容器的垂直居中 */
